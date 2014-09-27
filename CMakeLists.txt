@@ -35,14 +35,16 @@ add_executable(hackpp ${HACKPP_SRC})
 target_link_libraries(hackpp ${SDL2_LIBRARY})
 
 if (WIN32)
+  add_custom_command(TARGET hackpp
+                     POST_BUILD COMMAND ${CMAKE_COMMAND} -E echo "Detected Win32 build env, copying DLLs...")
+                     
   file(GLOB SDL2_DLLS
        "${SDL2_INCLUDE_DIR}/../../bin/*.dll")
 
   foreach( file_i ${SDL2_DLLS} )
     add_custom_command(TARGET hackpp
                        POST_BUILD
-                       COMMAND ${CMAKE_COMMAND} -E copy_if_different 
-                       ${file_i}
-                       $<TARGET_FILE_DIR:hackpp>)
+                       COMMAND ${CMAKE_COMMAND} -E copy_if_different ${file_i} $<TARGET_FILE_DIR:hackpp>)
+    add_custom_command(TARGET hackpp POST_BUILD COMMAND ${CMAKE_COMMAND} -E echo ${file_i})
   endforeach( file_i )
 endif()
