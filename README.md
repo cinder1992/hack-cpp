@@ -7,8 +7,7 @@ A project to port my first game, Hack+, to C++, adding features that were not pr
 
 * SDL2 >= 2.0.3
 * cmake >= 2.8.4
-**Windows ONLY**
-* MinGW
+* MinGW **For Windows ONLY
 
 ## Compiling
 ### Linux
