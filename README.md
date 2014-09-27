@@ -31,7 +31,7 @@ Afterwords, it can be compiled with the following (Assuming MinGW is in your %pa
 **Note for windows users: You may have to manually select a generator for cmake! e.g.:**
 ```
 cmake -G "MinGW Makefiles" CMakeLists.txt
-make
+mingw32-make
 
 ```
 **NOTE: Visual Studio is not officially supported!**
