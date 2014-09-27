@@ -20,6 +20,7 @@ make
 ```
 ### Windows
 On Windows, one extra step is required before compiling:
+
 1. Download the SDL2 development libraries for MinGW from https://www.libsdl.org/download-2.0.php
 2. Extract the file to any location
 3. Copy the x86_64-w64-MinGW and i686-w64-MinGW folders to the include directory in the repository.
