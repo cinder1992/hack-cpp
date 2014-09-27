@@ -33,3 +33,16 @@ set(HACKPP_SRC ${PROJECT_SOURCE_DIR}/main.cpp
 
 add_executable(hackpp ${HACKPP_SRC})
 target_link_libraries(hackpp ${SDL2_LIBRARY})
+
+if (WIN32)
+  file(GLOB SDL2_DLLS
+       "${SDL2_INCLUDE_DIR}/../../bin/*.dll")
+
+  foreach( file_i ${SDL2_DLLS} )
+    add_custom_command(TARGET hackpp
+                       POST_BUILD
+                       COMMAND ${CMAKE_COMMAND} -E copy_if_different 
+                       ${file_i}
+                       $<TARGET_FILE_DIR:hackpp>)
+  endforeach( file_i )
+endif()
