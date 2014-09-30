@@ -29,7 +29,7 @@ find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR})
 
 set(HACKPP_SRC ${PROJECT_SOURCE_DIR}/main.cpp
-               ${PROJECT_SOURCE_DIR}/App.cpp)
+               ${PROJECT_SOURCE_DIR}/engine/App.cpp)
 
 add_executable(hackpp ${HACKPP_SRC})
 target_link_libraries(hackpp ${SDL2_LIBRARY})

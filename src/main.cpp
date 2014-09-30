@@ -4,7 +4,7 @@
 #include <windows.h>
 #endif // WIN32
 #include <SDL.h>
-#include "App.h"
+#include "engine/App.h"
 
 int main(int argc, char* argv[]) {
   if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
