@@ -12,12 +12,16 @@
  *  The constructor passes these arguments to SDL_CreateWindow and SDL_CreateRenderer.
  *
  */
+namespace Render {
 class App {
   public:
     App(int, int, int, int, const char*, uint32_t, uint32_t);
     ~App();
-  private:
+    SDL_Window* getWindow(void);
+    SDL_Renderer* getRenderer(void);
+    private:
     SDL_Window* AppWin;
     SDL_Renderer* AppRender;
 };
+}
 #endif
