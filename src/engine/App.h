@@ -15,7 +15,14 @@
 namespace Render {
 class App {
   public:
-    App(int, int, int, int, const char*, uint32_t, uint32_t);
+    App(const char* title = "Default Window",
+        int w = 800,
+        int h = 600,
+        int x = SDL_WINDOWPOS_UNDEFINED,
+        int y = SDL_WINDOWPOS_UNDEFINED,
+        uint32_t WinFlags = SDL_WINDOW_SHOWN,
+        uint32_t RenFlags = SDL_RENDERER_ACCELERATED
+        );
     ~App();
     SDL_Window* getWindow(void);
     SDL_Renderer* getRenderer(void);

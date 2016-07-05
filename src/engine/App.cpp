@@ -5,9 +5,9 @@
 #include <stdexcept>
 
 namespace Render {
-App::App(int w, int h, int x, int y, const char* title, uint32_t WinFlags, uint32_t RenFlags) {
+App::App(const char* title, int w, int h, int x, int y, uint32_t WinFlags, uint32_t RenFlags) {
   
-  AppWin = SDL_CreateWindow(title, w, h, x, y, WinFlags);
+  AppWin = SDL_CreateWindow(title, x, y, w, h, WinFlags);
   
   if (AppWin == nullptr) {
     throw std::runtime_error(SDL_GetError());

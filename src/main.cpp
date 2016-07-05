@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
   }
   App* MainApp;
   try {
-    MainApp = new App(SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, "Hello, World!", SDL_WINDOW_SHOWN, SDL_RENDERER_ACCELERATED);
+    MainApp = new App("Hello, World!", 1024, 768);
   }
   catch(const std::exception& ex) {
     std::cerr << "FATAL ERROR!:" << ex.what() << std::endl;
