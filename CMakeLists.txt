@@ -28,10 +28,12 @@ find_package(SDL2 REQUIRED)
 
 include_directories(${SDL2_INCLUDE_DIR})
 
-set(HACKPP_SRC ${PROJECT_SOURCE_DIR}/main.cpp
-               ${PROJECT_SOURCE_DIR}/engine/App.cpp)
+set(ENGINE_SRC  ${PROJECT_SOURCE_DIR}/engine/Render/App.cpp
+                ${PROJECT_SOURCE_DIR}/engine/Render/Renderable.cpp)
 
-add_executable(hackpp ${HACKPP_SRC})
+set(HACKPP_SRC  ${PROJECT_SOURCE_DIR}/main.cpp)
+
+add_executable(hackpp ${ENGINE_SRC} ${HACKPP_SRC})
 target_link_libraries(hackpp ${SDL2_LIBRARY})
 
 if (WIN32)

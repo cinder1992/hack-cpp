@@ -4,7 +4,7 @@
 #include <windows.h>
 #endif // WIN32
 #include <SDL.h>
-#include "engine/App.h"
+#include "engine/Render/App.h"
 
 int main(int argc, char* argv[]) {
   using namespace Render;
